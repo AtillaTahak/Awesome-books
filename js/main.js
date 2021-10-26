@@ -2,32 +2,15 @@ const addBooks = document.querySelector('#add');
 const bookName = document.getElementById('title');
 const authorName = document.getElementById('author');
 
-
 let bookList = JSON.parse(localStorage.getItem('books'));
 if (bookList == null) {
   bookList = [];
 }
 
-window.addEventListener('load', () => {
-  const other = new BookClass(bookList);
-  other.createBook();
-});
-
-function removeBook(remBookName) {
-  const other = new BookClass(bookList,remBookName);
-  other.removeBookClass();
-}
-
-addBooks.addEventListener('click', () => {
-  let bookListlet = { id: Math.random().toString(16).slice(2), bookNames: bookName.value, authorNames: authorName.value };
-  bookList.push(bookListlet);
-  const other = new BookClass(bookList);
-  other.createBook();
-});
 class BookClass {
-  constructor(bookList,removeId) {
+  constructor(bookList, removeId) {
     this.bookList = bookList;
-    this.removeId =removeId;
+    this.removeId = removeId;
   }
 
   createBook() {
@@ -45,9 +28,31 @@ class BookClass {
     localStorage.clear();
     localStorage.setItem('books', JSON.stringify(bookList));
   }
-  removeBookClass(){
-    const index = this.bookList.findIndex(prop => prop.id === this.removeId)
-    bookList.splice(index, 1)
+
+  removeBookClass() {
+    const index = this.bookList.findIndex((prop) => prop.id === this.removeId);
+    bookList.splice(index, 1);
     this.createBook();
   }
 }
+function removeBook(remBookName) {
+  const other = new BookClass(bookList, remBookName);
+  other.removeBookClass();
+}
+
+addBooks.addEventListener('click', () => {
+  const bookListlet = {
+    id: Math.random().toString(16).slice(2),
+    bookNames: bookName.value,
+    authorNames: authorName.value,
+  };
+  bookList.push(bookListlet);
+  const other = new BookClass(bookList);
+  other.createBook();
+});
+
+window.addEventListener('load', () => {
+  const other = new BookClass(bookList);
+  other.createBook();
+  removeBook(0);
+});

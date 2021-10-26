@@ -2,19 +2,21 @@ const addBooks = document.querySelector('#add');
 const bookName = document.getElementById('title');
 const authorName = document.getElementById('author');
 
-let bookList = [];
+let bookList = JSON.parse(localStorage.getItem('books'));
+if (bookList == null) {
+  bookList = [];
+}
 
 function createBook(bookElement) {
   document.querySelector('#book-list').innerHTML = '';
   bookElement.forEach((e) => {
-    const element = document.createElement('books');
+    const element = document.createElement('li');
 
-    element.innerHTML += ` <li>
-        <p>${e.bookNames}</p>
-        <p>${e.authorNames}</p>
-        <input type="button" value="remove" onclick="removeBook(this.id)" id="${bookElement.length}">
-        <hr>
-    </li>`;
+    element.innerHTML += `
+          <p>${e.bookNames}</p>
+          <p>${e.authorNames}</p>
+          <input type="button" value="remove" onclick="removeBook(this.id)" id="${bookElement.length}">
+          <hr>`;
     document.querySelector('#book-list').appendChild(element);
   });
   localStorage.clear();
@@ -22,8 +24,6 @@ function createBook(bookElement) {
 }
 
 window.addEventListener('load', () => {
-  bookList = JSON.parse(localStorage.getItem('books'));
-
   createBook(bookList);
 });
 

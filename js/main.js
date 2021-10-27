@@ -25,7 +25,7 @@ class BookClass {
           <hr>`;
       document.querySelector('#book-list').appendChild(element);
     });
-    localStorage.clear();
+
     localStorage.setItem('books', JSON.stringify(bookList));
   }
 
@@ -36,8 +36,13 @@ class BookClass {
   }
 }
 function removeBook(remBookName) {
-  const other = new BookClass(bookList, remBookName);
-  other.removeBookClass();
+  if (remBookName === '') {
+    const valitation = document.getElementById('validation');
+    valitation.style.display = 'none';
+  } else {
+    const other = new BookClass(bookList, remBookName);
+    other.removeBookClass();
+  }
 }
 
 addBooks.addEventListener('click', () => {
@@ -54,5 +59,5 @@ addBooks.addEventListener('click', () => {
 window.addEventListener('load', () => {
   const other = new BookClass(bookList);
   other.createBook();
-  removeBook(0);
+  removeBook('');
 });

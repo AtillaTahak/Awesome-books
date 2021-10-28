@@ -61,3 +61,25 @@ li {
     margin-bottom: 1%;
   }
 }
+
+.contact-info {
+  text-align: center;
+}
+
+#contact {
+  margin: 0 20%;
+  text-align: start;
+  font-family: ;
+}
+
+.contact:before {
+  content: "•"; 
+}
+
+footer {
+  background-color: white;
+  margin: 0 2%;
+  border: 1px solid black;
+  margin-bottom: 2%;
+  margin-top: 5%;
+}

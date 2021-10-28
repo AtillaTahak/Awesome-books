@@ -11,10 +11,12 @@ input {
 li {
   list-style: none;
 }
+
 #title{
   width: 50vw;
   margin-bottom: 3%;
 }
+
 #author{
   width: 50vw;
   margin-bottom: 3%;
@@ -34,9 +36,3 @@ li {
   background-color: #474646;
   color: white;
 }
-
-
-/* .list-books {
-  display: flex;
-  justify-content: space-around;
-} */

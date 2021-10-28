@@ -28,10 +28,9 @@ class BookClass {
 
       element.innerHTML += `
       
-          <p>${e.bookNames}</p>
-          <p>${e.authorNames}</p>
+          <p class="bookName">${e.bookNames} By ${e.authorNames}</p>
+  
           <input class="removebtn" type="button" value="Remove" onclick="removeBook(this.id)" id="${e.id}">
-          <hr>
           `;
       document.querySelector('#book-list').appendChild(element);
     });

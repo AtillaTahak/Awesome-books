@@ -26,7 +26,7 @@ li {
 }
 
 .list-group {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -34,6 +34,7 @@ li {
   background-color: #474646;
   color: white;
 }
+
 
 /* .list-books {
   display: flex;

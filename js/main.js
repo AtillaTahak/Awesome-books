@@ -1,6 +1,13 @@
 const addBooks = document.querySelector('#add');
 const bookName = document.getElementById('title');
 const authorName = document.getElementById('author');
+var currentdate = new Date(); 
+var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
 
 let bookList = JSON.parse(localStorage.getItem('books'));
 if (bookList == null) {
@@ -17,6 +24,7 @@ class BookClass {
     document.querySelector('#book-list').innerHTML = '';
     this.bookList.forEach((e) => {
       const element = document.createElement('li');
+      element.className = "list-group-item list-group-item-action";
 
       element.innerHTML += `
           <p>${e.bookNames}</p>
@@ -57,11 +65,12 @@ addBooks.addEventListener('click', () => {
 });
 
 window.addEventListener('load', () => {
+  
   const other = new BookClass(bookList);
   other.createBook();
   removeBook('');
-  // const now = DateTime.now();
-  // dt = DateTime.fromObject({day: 22, hour: 12 }, { zone: 'America/Los_Angeles', numberingSystem: 'beng'})
+  document.getElementById("datetime").innerHTML =datetime;
+
 
 
 });

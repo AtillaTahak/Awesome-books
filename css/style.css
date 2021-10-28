@@ -85,7 +85,7 @@ li {
   align-content: center;
 }
 
-.contactSection::before {
+.contact::before {
   content: "•";
 }
 

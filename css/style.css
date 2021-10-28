@@ -13,26 +13,32 @@ li {
 }
 
 #title {
-  width: 50vw;
+  width: 40vh;
   margin-bottom: 3%;
 }
 
 #author {
-  width: 50vw;
+  display: block;
+  width: 40vh;
   margin-bottom: 3%;
 }
 
 #add {
-  width: 50vw;
-  margin-bottom: 3%;
+  margin-left: 20vh;
+  width: 20vh;
+  margin-bottom: 1%;
 }
 
 .list-group {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
 }
 
 .removebtn {
   background-color: #474646;
   color: white;
+}
+
+.text-info {
+  font-size: large;
 }

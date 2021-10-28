@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link]
+[Live Demo Link](https://atillatahak.github.io/Awesome-books/)
 
 ## Presentation
 
@@ -36,13 +36,18 @@ in visual studio code you can click the go live button to view it live in the br
 
 ## Authors
 
-👤 **Author**
+👤 **ATİLLA TAHA KÖRDÜĞÜM**
 
 - GitHub: [@AtillaTahak](https://github.com/AtillaTahak)
 - Twitter: [@AtillaTahaa](https://twitter.com/AtillaTahaa)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/atilla-taha-kördüğüm-a93702186/)
 - Blog: [Blog](atillataha.blogspot.com)
 - Youtube: [YouTube](https://www.youtube.com/channel/UCmoD0x4Z9vdG2PCsI5p8FYg)
+👤 **AKU KHAN**
+
+- GitHub: [@AkuKhan](https://github.com/aakbarkhan)
+
+
 
 ## 🤝 Contributing
 

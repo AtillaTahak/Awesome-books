@@ -13,19 +13,19 @@ li {
 }
 
 #title {
-  width: 40vw;
+  width: 40vh;
   margin-bottom: 3%;
 }
 
 #author {
   display: block;
-  width: 40vw;
+  width: 40vh;
   margin-bottom: 3%;
 }
 
 #add {
-  margin-left: 20vw;
-  width: 20vw;
+  margin-left: 20vh;
+  width: 20vh;
   margin-bottom: 1%;
 }
 

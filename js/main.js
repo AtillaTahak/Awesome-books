@@ -1,6 +1,14 @@
 const addBooks = document.querySelector('#add');
 const bookName = document.getElementById('title');
 const authorName = document.getElementById('author');
+const addedNotice = document.getElementById('addedNotice');
+const currentdate = new Date();
+const datetime = `Last Sync: ${currentdate.getDate()}/${
+  currentdate.getMonth() + 1}/${
+  currentdate.getFullYear()} @ ${
+  currentdate.getHours()}:${
+  currentdate.getMinutes()}:${
+  currentdate.getSeconds()}`;
 
 let bookList = JSON.parse(localStorage.getItem('books'));
 if (bookList == null) {
@@ -17,12 +25,14 @@ class BookClass {
     document.querySelector('#book-list').innerHTML = '';
     this.bookList.forEach((e) => {
       const element = document.createElement('li');
+      element.className = 'list-group-item list-group-item-action d-flex justify-content-between border-5 border-dark';
 
       element.innerHTML += `
-          <p>${e.bookNames}</p>
-          <p>${e.authorNames}</p>
-          <input type="button" value="remove" onclick="removeBook(this.id)" id="${e.id}">
-          <hr>`;
+      
+          <p class="bookName">${e.bookNames} By ${e.authorNames}</p>
+  
+          <input class="removebtn" type="button" value="Remove" onclick="removeBook(this.id)" id="${e.id}">
+          `;
       document.querySelector('#book-list').appendChild(element);
     });
 
@@ -54,10 +64,13 @@ addBooks.addEventListener('click', () => {
   bookList.push(bookListlet);
   const other = new BookClass(bookList);
   other.createBook();
+  addedNotice.innerHTML = `added this book${bookName.value} ${authorName.value}`;
+  addedNotice.style.color = 'red';
 });
 
 window.addEventListener('load', () => {
   const other = new BookClass(bookList);
   other.createBook();
   removeBook('');
+  document.getElementById('datetime').innerHTML = datetime;
 });

@@ -3,6 +3,10 @@
   padding: 1px;
 }
 
+#addBooks {
+  display: none;
+}
+
 input {
   display: block;
   margin-bottom: 10px;
@@ -10,4 +14,88 @@ input {
 
 li {
   list-style: none;
+}
+
+#datetime {
+  position: absolute;
+  right: 0;
+}
+
+#title {
+  width: 40vh;
+  margin-bottom: 3%;
+}
+
+#author {
+  display: block;
+  width: 40vh;
+  margin-bottom: 3%;
+}
+
+#add {
+  margin-left: 20vh;
+  width: 20vh;
+  margin-bottom: 1%;
+  background-color: #474646;
+  color: white;
+  box-shadow: 5px 5px #888;
+  border-radius: 0;
+}
+
+.list-group {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.removebtn {
+  background-color: #474646;
+  color: white;
+  box-shadow: 5px 5px #888;
+}
+
+.text-info {
+  font-size: large;
+}
+
+@media screen and (min-width: 768px) {
+  #title {
+    width: 25vw;
+    margin-bottom: 3%;
+  }
+
+  #author {
+    display: block;
+    width: 25vw;
+    margin-bottom: 3%;
+  }
+
+  #add {
+    margin-left: 10vw;
+    width: 15vw;
+    margin-bottom: 1%;
+  }
+}
+
+#contactSection {
+  margin: 0 20%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.contact::before {
+  content: "•";
+}
+
+footer {
+  background-color: white;
+  margin: 0 2%;
+  border: 1px solid black;
+  margin-bottom: 2%;
+  margin-top: 5%;
+  position: absolute;
+  bottom: 0;
+  width: 95vw;
 }

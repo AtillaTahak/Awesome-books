@@ -24,13 +24,15 @@ class BookClass {
     document.querySelector('#book-list').innerHTML = '';
     this.bookList.forEach((e) => {
       const element = document.createElement('li');
-      element.className = "list-group-item list-group-item-action";
+      element.className = "list-group-item list-group-item-action d-flex justify-content-between";
 
       element.innerHTML += `
+      
           <p>${e.bookNames}</p>
           <p>${e.authorNames}</p>
-          <input type="button" value="remove" onclick="removeBook(this.id)" id="${e.id}">
-          <hr>`;
+          <input class="removebtn" type="button" value="Remove" onclick="removeBook(this.id)" id="${e.id}">
+          <hr>
+          `;
       document.querySelector('#book-list').appendChild(element);
     });
 

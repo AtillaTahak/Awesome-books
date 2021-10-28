@@ -24,3 +24,18 @@ li {
   width: 50vw;
   margin-bottom: 3%;
 }
+
+.list-group {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.removebtn {
+  background-color: #474646;
+  color: white;
+}
+
+/* .list-books {
+  display: flex;
+  justify-content: space-around;
+} */

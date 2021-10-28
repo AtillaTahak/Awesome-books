@@ -3,6 +3,10 @@
   padding: 1px;
 }
 
+#addBooks {
+  display: none;
+}
+
 input {
   display: block;
   margin-bottom: 10px;
@@ -10,6 +14,11 @@ input {
 
 li {
   list-style: none;
+}
+
+#datetime {
+  position: absolute;
+  right: 0;
 }
 
 #title {
@@ -27,6 +36,10 @@ li {
   margin-left: 20vh;
   width: 20vh;
   margin-bottom: 1%;
+  background-color: #474646;
+  color: white;
+  box-shadow: 5px 5px #888;
+  border-radius: 0;
 }
 
 .list-group {
@@ -37,6 +50,7 @@ li {
 .removebtn {
   background-color: #474646;
   color: white;
+  box-shadow: 5px 5px #888;
 }
 
 .text-info {
@@ -62,18 +76,17 @@ li {
   }
 }
 
-.contact-info {
-  text-align: center;
-}
-
-#contact {
+#contactSection {
   margin: 0 20%;
-  text-align: start;
-  font-family: ;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
-.contact:before {
-  content: "•"; 
+.contactSection::before {
+  content: "•";
 }
 
 footer {
@@ -82,4 +95,7 @@ footer {
   border: 1px solid black;
   margin-bottom: 2%;
   margin-top: 5%;
+  position: absolute;
+  bottom: 0;
+  width: 95vw;
 }

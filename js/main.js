@@ -1,6 +1,7 @@
 const addBooks = document.querySelector('#add');
 const bookName = document.getElementById('title');
 const authorName = document.getElementById('author');
+const addedNotice = document.getElementById('addedNotice');
 const currentdate = new Date();
 const datetime = `Last Sync: ${currentdate.getDate()}/${
   currentdate.getMonth() + 1}/${
@@ -24,7 +25,7 @@ class BookClass {
     document.querySelector('#book-list').innerHTML = '';
     this.bookList.forEach((e) => {
       const element = document.createElement('li');
-      element.className = 'list-group-item list-group-item-action d-flex justify-content-between';
+      element.className = 'list-group-item list-group-item-action d-flex justify-content-between border-5 border-dark';
 
       element.innerHTML += `
       
@@ -63,6 +64,8 @@ addBooks.addEventListener('click', () => {
   bookList.push(bookListlet);
   const other = new BookClass(bookList);
   other.createBook();
+  addedNotice.innerHTML = `added this book${bookName.value} ${authorName.value}`;
+  addedNotice.style.color = 'red';
 });
 
 window.addEventListener('load', () => {
